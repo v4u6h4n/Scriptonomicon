@@ -50,22 +50,25 @@ while true; do
 
                                             case $menu_arch_kde_printers in
                                                 1)
-                                                    commands="
-                                                    # Created: 2023-12-29
-                                                    # Updated: 2023-12-29
-                                
-                                                    # Install packages.
-                                                    sudo pacman -S cups cups-pdf print-manager system-config-printer hplip
-                                                    # Install cups service.
-                                                    sudo systemctl enable cups
-                                                    # Replace 'size' with your preferred paper size(s).
-                                                    echo 'size' >> /etc/papersize
-                                                    echo 'size' >> /etc/paperspecs
-                                                    # Restart computer.
-                                                    "
-                                
-                                                    # Display commands in a scrollable textbox
-                                                    echo "$commands" | whiptail --title "Commands" --textbox - 20 80
+arch_kde_printers_hp="
+# Created: 2023-12-29
+# Updated: 2023-12-29
+
+# Install packages.
+sudo pacman -S cups cups-pdf print-manager
+system-config-printer hplip
+
+# Install cups service.
+sudo systemctl enable cups
+
+# Replace 'size' with your preferred paper size(s).
+echo 'size' >> /etc/papersize
+echo 'size' >> /etc/paperspecs
+
+# Restart computer.
+Installation completed successfully.
+"
+                                                    whiptail --title "HP Printer" --scrolltext --msgbox "$arch_kde_printers_hp" 30 60
                                                     ;;
                                                 2)
                                                     ;;
