@@ -50,21 +50,23 @@ while true; do
 
                                             case $menu_arch_kde_printers in
                                                 1)
-                                                whiptail --title "HP Printer" --msgbox "
-                                                # Created: 2023-12-29
-                                                # Updated: 2023-12-29
-
-                                                # Install packages.
-                                                sudo pacman -S cups cups-pdf print-manager system-config-printer hplip
-                                                # Install cups service.
-                                                sudo systemctl enable cups
-                                                # Replace 'size' with your preferred paper size(s).
-                                                echo 'size' >> /etc/papersize
-                                                echo 'size' >> /etc/paperspecs
-                                                # Restart computer.
-                                                Installation completed successfully.
-                                                " 15 60
-                                                ;;
+                                                    commands="
+                                                    # Created: 2023-12-29
+                                                    # Updated: 2023-12-29
+                                
+                                                    # Install packages.
+                                                    sudo pacman -S cups cups-pdf print-manager system-config-printer hplip
+                                                    # Install cups service.
+                                                    sudo systemctl enable cups
+                                                    # Replace 'size' with your preferred paper size(s).
+                                                    echo 'size' >> /etc/papersize
+                                                    echo 'size' >> /etc/paperspecs
+                                                    # Restart computer.
+                                                    "
+                                
+                                                    # Display commands in a scrollable textbox
+                                                    echo "$commands" | whiptail --title "Commands" --textbox - 20 80
+                                                    ;;
                                                 2)
                                                     ;;
                                                 *)
