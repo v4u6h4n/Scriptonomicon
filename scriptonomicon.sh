@@ -50,3 +50,14 @@ while true; do
             ;;
     esac
 done
+
+
+#########################################
+# Arch | KDE
+#########################################
+
+sudo pacman -S cups cups-pdf print-manager system-config-printer hplip
+sudo systemctl enable cups
+echo 'A4' >> /etc/papersize
+echo 'A4' >> /etc/paperspecs
+Restart computer.
