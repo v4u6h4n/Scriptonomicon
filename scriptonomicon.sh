@@ -50,20 +50,23 @@ while true; do
 
                                             case $menu_arch_kde_printers in
                                                 1)
-                                                    echo "
-                                                    # Created: 2023-12-29
-                                                    # Updated: 2023-12-29
+                                                echo "
+                                                # Created: 2023-12-29
+                                                # Updated: 2023-12-29
 
-                                                    # Install packages.
-                                                    sudo pacman -S cups cups-pdf print-manager system-config-printer hplip
-                                                    # Install cups service.
-                                                    sudo systemctl enable cups
-                                                    # Replace 'size' with your preferred paper size(s).
-                                                    echo 'size' >> /etc/papersize
-                                                    echo 'size' >> /etc/paperspecs
-                                                    # Restart computer.
-                                                    "
-                                                    ;;
+                                                # Install packages.
+                                                sudo pacman -S cups cups-pdf print-manager system-config-printer hplip
+                                                # Install cups service.
+                                                sudo systemctl enable cups
+                                                # Replace 'size' with your preferred paper size(s).
+                                                echo 'size' >> /etc/papersize
+                                                echo 'size' >> /etc/paperspecs
+                                                # Restart computer.
+                                                "
+
+                                                # Display a message box and wait for user confirmation before continuing
+                                                whiptail --title "Installation Completed" --msgbox "Installation completed successfully." 15 60
+                                                ;;
                                                 2)
                                                     ;;
                                                 *)
