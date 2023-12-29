@@ -1,13 +1,13 @@
 #!/bin/bash
 
 while true; do
-    menu_main=$(whiptail --title "Scriptonomicon" --menu "Main Menu" 15 60 7 \
+    menu=$(whiptail --title "Scriptonomicon" --menu "Main Menu" 15 60 7 \
     "1" "Start" \
     "2" "Search" \
     "3" "About" \
     "4" "Quit" 3>&1 1>&2 2>&3)
 
-    case $menu_main in
+    case $menu in
         1)
             menu_distro=$(whiptail --title "Scriptonomicon" --menu "Linux Distributions" 15 60 4 \
             "1" "Arch" \
