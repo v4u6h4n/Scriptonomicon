@@ -50,7 +50,7 @@ while true; do
 
                                             case $menu_arch_kde_printers in
                                                 1)
-                                                echo "
+                                                whiptail --title "HP Printer" --msgbox "
                                                 # Created: 2023-12-29
                                                 # Updated: 2023-12-29
 
@@ -62,10 +62,8 @@ while true; do
                                                 echo 'size' >> /etc/papersize
                                                 echo 'size' >> /etc/paperspecs
                                                 # Restart computer.
-                                                "
-
-                                                # Display a message box and wait for user confirmation before continuing
-                                                whiptail --title "Installation Completed" --msgbox "Installation completed successfully." 15 60
+                                                Installation completed successfully.
+                                                " 15 60
                                                 ;;
                                                 2)
                                                     ;;
