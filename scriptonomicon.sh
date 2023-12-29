@@ -54,6 +54,8 @@ arch_kde_printers_hp="
 # Created: 2023-12-29
 # Updated: 2023-12-29
 
+# Notes: Restarts computer.
+
 # Install packages.
 sudo pacman -S cups cups-pdf print-manager
 system-config-printer hplip
@@ -66,7 +68,7 @@ echo 'size' >> /etc/papersize
 echo 'size' >> /etc/paperspecs
 
 # Restart computer.
-Installation completed successfully.
+sudo reboot now
 "
                                                     whiptail --title "HP Printer" --scrolltext --msgbox "$arch_kde_printers_hp" 30 60
                                                     ;;
