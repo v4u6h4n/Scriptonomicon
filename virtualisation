@@ -1,0 +1,7 @@
+# GPU VIRTUALISATION
+
+
+Set Video in Virtual Manager to QXL
+Enable IOMMU and SR-IOV in BIOS.
+Add "intel_iommu=on iommu=pt" for Intel, and "amd_iommu=on" for AMD in the line that starts with "GRUB_CMDLINE_LINUX_DEFAULT="
+sudo grub-mkconfig -o /boot/grub/grub.cfg
