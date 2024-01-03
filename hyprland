@@ -1,0 +1,12 @@
+# INSTALLATION
+  
+  # ARCH
+
+    # Install base files.
+    sudo pacman -S
+
+    # Install bar.
+    sudo pacman -S waybar pavucontrol
+
+    # Install application launcher.
+    yay -S rofi-lbonn-wayland-git
