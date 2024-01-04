@@ -13,3 +13,6 @@
 
     # Install audio devices managment application.
     sudo pacman -S pavucontrol
+
+    # Install weather application.
+    flatpak install flathub org.kde.kweather
