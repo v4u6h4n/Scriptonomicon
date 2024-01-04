@@ -1,12 +1,15 @@
 # INSTALLATION
-  
+
   # ARCH
 
     # Install base files.
-    sudo pacman -S
+    sudo pacman -S hyprland
 
     # Install bar.
-    sudo pacman -S waybar pavucontrol
+    sudo pacman -S waybar
 
     # Install application launcher.
     yay -S rofi-lbonn-wayland-git
+
+    # Install audio devices managment application.
+    sudo pacman -S pavucontrol
