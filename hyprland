@@ -3,10 +3,10 @@
   # ARCH
 
     # Install base files.
-      sudo pacman -S hyprland xdg-desktop-portal-hyprland swayidle swaylock
+      sudo pacman -S hyprland xdg-desktop-portal-hyprland swayidle
 
     # Install bar.
-      sudo pacman -S waybar
+      sudo pacman -S waybar mako
       yay -S wttrbar waybar-module-pacman-updates-git
       flatpak install flathub org.kde.kweather
 
