@@ -7,7 +7,7 @@
 
     # Install bar.
       sudo pacman -S waybar
-      yay -S wttrbar
+      yay -S wttrbar waybar-module-pacman-updates-git
       flatpak install flathub org.kde.kweather
 
     # Install application launcher.
