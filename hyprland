@@ -3,13 +3,12 @@
   # ARCH
 
     # Install base files.
-    sudo pacman -S hyprland xdg-desktop-portal-hyprland
+      sudo pacman -S hyprland xdg-desktop-portal-hyprland
 
     # Install bar.
-    sudo pacman -S waybar
+      sudo pacman -S waybar
+      yay -S wttrbar
+      flatpak install flathub org.kde.kweather
 
     # Install application launcher.
-    yay -S rofi-lbonn-wayland-git
-
-    # Install weather application.
-    flatpak install flathub org.kde.kweather
+      yay -S rofi-lbonn-wayland-git
