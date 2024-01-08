@@ -3,7 +3,7 @@
   # ARCH
 
     # Install base files.
-      sudo pacman -S hyprland xdg-desktop-portal-hyprland swayidle
+      sudo pacman -S hyprland xdg-desktop-portal-hyprland swayidle swaylock
 
     # Install bar.
       sudo pacman -S waybar
