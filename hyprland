@@ -12,3 +12,9 @@
 
     # Install application launcher.
       yay -S rofi-lbonn-wayland-git
+
+    # Configure settings
+
+      mkdir ~/.config/swayidle
+      nano ~/.config/swayidle/config
+      timeout 60 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on'
