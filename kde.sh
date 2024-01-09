@@ -5,7 +5,7 @@
   # Install base packages.
 
   # Install optional recommended packages.
-  sudo pacman -S dolphin-plugins
+  sudo pacman -S partitionmanager dolphin-plugins
 
   # Install optional utilities.
   sudo pacman -S kcharselect
