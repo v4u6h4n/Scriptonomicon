@@ -1,0 +1,44 @@
+# FIX CORRUPT GRUB
+
+  # Preparation.
+    # Disable secure boot (clear keys).
+    # Save and reboot into USB Arch.
+
+  # Connect to internet.
+    iwctl
+    station wlan0 connect <ssid>
+    exit
+    ping google.com
+
+  # Decrypt drive.
+    cryptsetup luksOpen /dev/sdb2 ROOT
+
+  # Mount partitions.
+    mount -o compress=zstd,subvol=@ /dev/mapper/ROOT /mnt
+    mkdir -p /mnt/home
+    mount -o compress=zstd,subvol=@home /dev/mapper/ROOT /mnt/home
+    mount /dev/sdb1 /mnt/boot
+
+  # Chroot.
+    arch-chroot /mnt
+
+  # Fix Grub.
+    grub-mkconfig > /boot/grub/grub.cfg
+    grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+
+  # Unmount.
+    exit
+    sudo umount /mnt/home
+    sudo umount /mnt/boot
+    sudo umount /mnt
+    reboot
+
+  # Restore secure boot.
+    sudo grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB --modules="tpm" --disable-shim-lock
+    sudo grub-mkconfig -o /boot/grub/grub.cfg
+    sudo sbctl enroll-keys -m
+    sudo sbctl sign -s /boot/EFI/GRUB/grubx64.efi
+    sudo sbctl sign -s /boot/vmlinuz-linux
+    # Reboot
+    sudo sbctl status
+    sudo sbctl verify
